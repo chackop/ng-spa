@@ -13,6 +13,9 @@
             url: '/contacts/:letter',
             controller: 'contactLetter',
             templateUrl: '/views/contactLetter.html'
+            // resolve: { delay: function ($timeout) {  
+            //     return $timeout(function () {  }, 2000)
+            // }}
         });
 
         $urlRouteProvider.when('', '/contacts');
