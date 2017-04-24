@@ -16,6 +16,10 @@
             // resolve: { delay: function ($timeout) {  
             //     return $timeout(function () {  }, 2000)
             // }}
+        }).state('contactLetter.editContact', {
+            url: '/editContact/:name',
+            controller: 'editContact',
+            templateUrl: '/views/editContact.html'
         });
 
         $urlRouteProvider.when('', '/contacts');

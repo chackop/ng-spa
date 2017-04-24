@@ -1,17 +1,23 @@
-﻿<h1>Contact Letter {{ initial }}</h1>
-<article ng-repeat="contact in letterContacts" class="contact">
-    <h1>{{ contact.name }}</h1>
-    <ul>
-        <li ng-repeat="telNum in contact.tel">
-            <span ng-repeat="(key, val) in telNum">
+﻿<div ng-hide="hide{{ contact.name }}">
+    <h1>Contact Letter {{ initial }}</h1>
+    <article ng-repeat="contact in letterContacts" class="contact">
+        <h1>{{ contact.name }}</h1>
+        <a class="edit-link" ui-sref="contactLetter.editContact({ name: contact.name })">Edit</a>
+        <ul>
+            <li ng-repeat="telNum in contact.tel">
+                <span ng-repeat="(key, val) in telNum">
                 <span class="{{key}}">{{val}}</span>
-            </span>
-        </li>
-        <li class="address">
-            {{ contact.address }}
-        </li>
-        <li class="email">
-            {{ contact.email }}
-        </li>
-    </ul>
-</article>
+                </span>
+            </li>
+            <li class="address">
+                {{ contact.address }}
+            </li>
+            <li class="email">
+                {{ contact.email }}
+            </li>
+        </ul>
+        <div ui-view>
+
+        </div>
+    </article>
+</div>
